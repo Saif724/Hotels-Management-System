@@ -2,12 +2,26 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import java.util.ArrayList;
+
 public class HomePage extends JFrame {
+
+    public static ArrayList<Room> rooms = new ArrayList<>();
+    public static ArrayList<Customer> customers = new ArrayList<>();
 
     CardLayout cardLayout;
     JPanel mainPanel;
+    private void initializeRooms() {
+    rooms.add(new Room(101, "Single", true));
+    rooms.add(new Room(102, "Double", true));
+    rooms.add(new Room(103, "Suite", true));
+    rooms.add(new Room(104, "Single", true));
+    rooms.add(new Room(105, "Double", true));
+}
 
     public HomePage() {
+        initializeRooms();
+
         setTitle("Hotel Management System");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,7 +45,7 @@ public class HomePage extends JFrame {
         mainPanel = new JPanel(cardLayout);
 
         mainPanel.add(new JLabel("Dashboard Screen", SwingConstants.CENTER), "Dashboard");
-        mainPanel.add(new JLabel("Booking Screen", SwingConstants.CENTER), "Book");
+        mainPanel.add(new BookingPanel(), "Book");
         mainPanel.add(new JLabel("Checkout Screen", SwingConstants.CENTER), "Checkout");
         mainPanel.add(new JLabel("Rooms Screen", SwingConstants.CENTER), "Rooms");
         mainPanel.add(new JLabel("Admin Screen", SwingConstants.CENTER), "Admin");
