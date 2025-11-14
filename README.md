@@ -11,7 +11,7 @@ Features
 - Financial Reports: Earnings and expense tracking
 
 Technologies Used
-- Java Swing (Frontend UI)
-- MySQL (Database)
-- JDBC (Database Connectivity) 
-- JCalendar (Date Picker)
+- Java Swing 
+- MySQL 
+- JDBC 
+- JCalendar 
